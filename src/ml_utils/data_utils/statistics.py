@@ -1,13 +1,13 @@
 import numpy as np
 
 
-def standard_statistics(data: np.ndarray):
+def standard_statistics(data: np.ndarray) -> dict:
     """
     Compute most important basic statistics and store them in a list.
 
     Parameters
     ---------
-    data: Data for which the statistics should be computed
+    data: Data for which the statistics should be computed.
 
     Returns
     -------

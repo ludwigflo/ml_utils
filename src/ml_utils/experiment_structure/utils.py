@@ -82,6 +82,7 @@ def init_experiment_dir(dir_root, tb_log: bool = False, tb_log_names: Union[None
     dir_name = dir_root + create_date_time_string() + '/'
     source_file_dir = dir_name + 'src/'
     dir_list = [dir_name, source_file_dir]
+    output = tuple(dir_name)
 
     # if we want to include tensorboard logging
     if tb_log:
@@ -101,7 +102,8 @@ def init_experiment_dir(dir_root, tb_log: bool = False, tb_log_names: Union[None
                 # create a logger instance and store the instance as well as the corresponding directory
                 tb_logger_list.append(Logger(logger_dir))
                 dir_list.append(logger_dir)
+                output = (dir_name, tb_logger_list)
 
     # create the directories and return the root directory of the new created experiment
     create_directories(dir_list)
-    return dir_name
+    return output
