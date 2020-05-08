@@ -30,6 +30,8 @@ class TestImgLoader(unittest.TestCase):
             self.assertEqual(img.shape, (2, 3, 128, 128))
             break
 
+        print(img_loader.split[0])
+
         # # test the ImgLoader for returning data with additional labels
         # img_loader = ImgLoader(self.params, img_size=(3, 128, 128), shuffle_data=False, return_labels=True)
         # train_loader = img_loader.train_generator(7)
